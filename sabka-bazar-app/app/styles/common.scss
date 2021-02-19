@@ -1,0 +1,32 @@
+.floatcontainer:after {
+    content: "."; 
+    display: block; 
+    height: 0; 
+    clear: both; 
+    visibility: hidden;
+  }
+      
+  .floatcontainer {
+    display: inline-block;
+  }
+  
+  * html .floatcontainer {height: 1%;}
+  .floatcontainer{display:block;}
+
+  // input{
+  //   display: block;
+  //   width: 250px;
+  //   border: 0;
+  //   border-bottom: 1px solid gray;
+  //   margin-bottom: 10px;
+  //   height: 40px;
+  // }
+  button{
+      width: 315px;
+      display:block;
+      background-color:#f2384a;
+      color:#fff;
+      padding : 10px;
+      font-size : $FontSize;
+      border:0;
+  }
