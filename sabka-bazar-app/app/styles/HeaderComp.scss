@@ -1,64 +1,85 @@
-
-*{
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    text-decoration: none;
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
 }
-.header{
-    width: 100%;
-    height: 86px;
-    display: block;
-    padding: 5px;
-    box-shadow: 0px 0px 5px gray;
+.header {
+  width: 100%;
+  display: block;
+  padding: 5px;
+  box-shadow: 0px 0px 5px gray;
+  position: relative;
+  z-index: 9;
 }
-.inner-header{
-    width: 100%;
-    max-width: 1200px;
-    height: 100%;
-    display: block;
-    margin: 0 auto;
-    // border: 1px solid red;
+.inner-header {
+  width: 100%;
+  max-width: 1200px;
+  display: block;
+  margin: 0 auto;
+  // border: 1px solid red;
 }
-.logo-container{
-    height: 86px;
-    width: 190px;
-    float: left;
-    // display: table;
+.logo-container {
+  width: 190px;
+  float: left;
+  // display: table;
 }
-.navigation{
-    margin-left: 80px;
-    height: 100%;
-    float: left;
-    // padding-top: 50px;
+.navigation {
+  margin-left: 80px;
+  float: left;
+  // padding-top: 50px;
 }
-.navigation li{
-    // height: 100%;
-    float: left;
-    padding: 53px 20px 0 20px;
-    font-size: $FontSize;
+.navigation li {
+  // height: 100%;
+  float: left;
+  padding: 53px 20px 0 20px;
+  font-size: $FontSize;
 }
-.navigation-right{
-    float:right;
+.navigation-right {
+  float: right;
 }
-.cart-container{
-    background: url('../images/cart.svg');
-    // float: right;
-    display:block;
-    margin-right: 20px;
-    padding: 15px 20px;
-    background: #d3dded;
-    margin-top: 21px;
-    font-size: $FontSize;
+.cart-container {
+  background: url('../images/cart.svg');
+  // float: right;
+  display: block;
+  margin-right: 20px;
+  padding: 15px 20px;
+  background: #d3dded;
+  margin-top: 15px;
+  font-size: $FontSize;
+  position: relative;
+  top: 6px;
 }
-.signInBar{
-    font-size: $SmallFontSize;
-    display: inline-block;
-    margin-right:10px;
-    // float: right;
+.signInBar {
+  font-size: $SmallFontSize;
+  display: inline-block;
+  margin-right: 10px;
+  color: #000;
+  font-size: $FontSize;
+  &:hover,
+  &.selected {
+    color: rgba(96, 96, 221, 0.897);
+  }
 }
-.registerBar{
-    font-size: $SmallFontSize;
-    display:inline-block;
-    // float: right;
+.registerBar {
+  font-size: $SmallFontSize;
+  display: inline-block;
+  color: #000;
+  font-size: $FontSize;
+  &:hover,
+  &.selected {
+    color: rgba(96, 96, 221, 0.897);
+  }
+}
+.navigation {
+  li {
+    a {
+      color: #000;
+      font-size: $FontSize;
+      &:hover,
+      &.selected {
+        color: rgba(96, 96, 221, 0.897);
+      }
+    }
+  }
 }
