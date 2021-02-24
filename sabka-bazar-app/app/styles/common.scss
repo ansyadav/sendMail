@@ -162,11 +162,12 @@ button,
 .btn {
   width: 315px;
   display: block;
-  background-color: #f2384a;
+  background-color: $btnBgColor;
   color: #fff;
   padding: 10px;
   font-size: $FontSize;
   border: 0;
+  cursor: pointer;
 }
 h1 {
   font-size: 24px;

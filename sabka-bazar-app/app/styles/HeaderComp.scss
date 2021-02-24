@@ -39,16 +39,26 @@
   float: right;
 }
 .cart-container {
-  background: url('../images/cart.svg');
-  // float: right;
   display: block;
   margin-right: 20px;
-  padding: 15px 20px;
-  background: #d3dded;
+  background: $lightGreyColor;
   margin-top: 15px;
   font-size: $FontSize;
   position: relative;
   top: 6px;
+  & > span {
+    padding: 12px 20px 15px;
+    cursor: pointer;
+    display: block;
+    img{
+      display:inline-block;
+      width:25px;
+      vertical-align: bottom;
+      margin-right: 10px;
+      position: relative;
+      top: 3px;
+    }
+  }
 }
 .signInBar {
   font-size: $SmallFontSize;
@@ -76,6 +86,7 @@
     a {
       color: #000;
       font-size: $FontSize;
+      cursor: pointer;
       &:hover,
       &.selected {
         color: rgba(96, 96, 221, 0.897);
