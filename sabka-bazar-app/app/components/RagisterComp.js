@@ -5,8 +5,8 @@ const RagisterComp = () => {
         <div className="login-section">
             <div className="inner-login-section floatcontainer">
                 <div className="left-sec">
-                    <h2>LogIn</h2>
-                    <div className="description">Get access to your Orders, Wishlists and Recommendations.</div>
+                    <h2>Signup</h2>
+                    <div className="description">We do not share your personal details with anyone.</div>
                 </div>
                 <div className="right-sec">
                     <form>

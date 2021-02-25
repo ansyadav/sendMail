@@ -1,13 +1,21 @@
 
 import React, { useState, useEffect } from 'react';
-import "react-responsive-carousel/lib/styles/carousel.min.css";
-import { Carousel } from 'react-responsive-carousel';
+import Tabs from 'react-responsive-tabs';
 import axios from 'axios';
+
+import 'react-responsive-tabs/styles.css';
+import Tab from 'react-responsive-tabs/lib/components/Tab';
 
 
 const ProductComp = (props) => {
     const [productItemsobject, setProductItems] = useState([]);
-
+    const productTabs = [
+        { name: 'Fruits & Vegetables', category: '5b6899953d1a866534f516e2' },
+        { name: 'Bakery Cakes and Dairy', category: '5b6899123d1a866534f516de' },
+        { name: 'Beverages', category: '5b675e5e5936635728f9fc30' },
+        { name: 'Beauty and Hygiene', category: '5b68994e3d1a866534f516df' },
+        { name: 'Baby Care', category: '5b6899683d1a866534f516e0' },
+    ];
     /**
      * Similar to componentDidMount and componentDidUpdate:
      */
@@ -47,42 +55,39 @@ const ProductComp = (props) => {
      */
     const images = importAll(require.context('../images/', true, /\.(png|jpe?g|svg)$/));
 
+    const getTabs = () => {
+        return productTabs.map((list, index) => ({
+            title: list.name,
+            getContent: () => {
+                return productItemsobject.map(item => {
+                    if (list.category === item.category) {
+                        return (
+                            <div className="product-details-box" key={item.id}>
+                                <h5>{item.name}</h5>
+                                <div className="product-detail-info">
+                                    <img src={images[item.imageURL]} alt={item.sku} />
+                                    <p>{item.description}</p>
+                                    <div className="price-buy-now">
+                                        <span>MRP Rs.{item.price}</span>
+                                        <button className="btn" onClick={() => props.addToCartFunction(item)}>Buy Now</button>
+                                    </div>
+                                </div>
+                            </div>
+                        )
+                    }
+                })
+            },
+            /* Optional parameters */
+            key: index,
+            tabClassName: 'tab',
+            panelClassName: 'panel',
+        }));
+    }
+
     return (
         <div className="productWrap">
             <section className="main-product-container floatcontainer">
-                <div className="left-product-section">
-                    <ul>
-                        <li>
-                            <a href="#" >Fruits & Vegetables</a>
-                        </li>
-                        <li>
-                            <a href="#" >Bakery Cakes and Dairy</a>
-                        </li>
-                        <li>
-                            <a href="#" >Beverages</a>
-                        </li>
-                        <li>
-                            <a href="#" >Beauty and Hygiene</a>
-                        </li>
-                        <li>
-                            <a href="#" >Baby Care</a>
-                        </li>
-                    </ul>
-                </div>
-                <div className="right-product-section">
-                    {
-                        productItemsobject.map(item => <div className="product-details-box" key={item.id}>
-                            <h5>{item.name}</h5>
-                            <img src={images[item.imageURL]} alt={item.sku} />
-                            <p>{item.description}</p>
-                            <div className="price-buy-now">
-                                <span>MRP Rs.{item.price}</span>
-                                <button className="btn" onClick={() => props.addToCartFunction(item)}>Buy Now</button>
-                            </div>
-                        </div>)
-                    }
-                </div>
-
+                <Tabs items={getTabs()} />
             </section>
 
         </div>

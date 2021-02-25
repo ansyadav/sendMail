@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
 import axios from 'axios';
+
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 
 const HomeComp = () => {

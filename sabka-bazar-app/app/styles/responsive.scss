@@ -1,0 +1,96 @@
+@media only screen and (max-width: 1199px) {
+}
+
+@media only screen and (max-width: 992px) {
+  // responsive css for login page
+  .left-sec {
+    padding-left: 5%;
+  }
+  .inner-footer {
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  // responsive css for Header section
+  .navigation,
+  .signInBar,
+  .registerBar {
+    display: none;
+  }
+  .logo-container {
+    width: 50%;
+    padding: 5px 10px;
+    img {
+      width: 105px;
+    }
+  }
+  .header {
+    padding: 0;
+  }
+  .cart-container {
+    margin: 0;
+    top: 0;
+    & > span {
+      padding: 16px 20px 17px;
+    }
+  }
+  section.product-info-list {
+    overflow: hidden;
+    padding-top: 20px;
+  }
+  // responsive css for login page
+  .left-sec,
+  .right-sec {
+    float: none;
+    width: 100%;
+    text-align: center;
+    padding: 0px 10px 15px;
+  }
+  .right-sec {
+    form {
+      max-width: 315px;
+      width: 100%;
+      margin: 0 auto;
+    }
+  }
+
+  // responsive css for Home page
+  .carousel {
+    .control-dots {
+      bottom: -32px;
+    }
+    &.carousel-slider {
+      overflow: visible;
+    }
+    .slide img {
+      min-height: 100px;
+    }
+  }
+  .product-info-list {
+    ul {
+      li {
+        padding: 10px;
+        .product-image,
+        .product-info {
+          display: inline-block;
+          float: none;
+        }
+        .product-info {
+          padding: 15px 10px;
+        }
+        &:nth-child(even) .product-image {
+          height: 47%;
+          img {
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 480px) {
+}
