@@ -4,7 +4,6 @@ import Tabs from 'react-responsive-tabs';
 import axios from 'axios';
 
 import 'react-responsive-tabs/styles.css';
-import Tab from 'react-responsive-tabs/lib/components/Tab';
 
 
 const ProductComp = (props) => {
@@ -69,7 +68,7 @@ const ProductComp = (props) => {
                                     <p>{item.description}</p>
                                     <div className="price-buy-now">
                                         <span>MRP Rs.{item.price}</span>
-                                        <button className="btn" onClick={() => props.addToCartFunction(item)}>Buy Now</button>
+                                        <button className="btn" onClick={() => props.addToCartFunction(item)}><span className="desktop-visible">Buy Now</span><span className="mobile-visible">Buy Now @ Rs.{item.price}</span></button>
                                     </div>
                                 </div>
                             </div>
@@ -87,7 +86,7 @@ const ProductComp = (props) => {
     return (
         <div className="productWrap">
             <section className="main-product-container floatcontainer">
-                <Tabs items={getTabs()} />
+                <Tabs items={getTabs()} transform={true} transformWidth={760} />
             </section>
 
         </div>
