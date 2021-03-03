@@ -14,7 +14,7 @@ const ProductComp = (props) => {
         { name: 'Beverages', category: '5b675e5e5936635728f9fc30' },
         { name: 'Beauty and Hygiene', category: '5b68994e3d1a866534f516df' },
         { name: 'Baby Care', category: '5b6899683d1a866534f516e0' },
-    ];
+    ]; // should be formed at run time
     /**
      * Similar to componentDidMount and componentDidUpdate:
      */
@@ -26,6 +26,7 @@ const ProductComp = (props) => {
    * function for products list data
    */
     const productsGetCall = () => {
+        // saperate axios file 
         axios.get('http://localhost:5000/products')
             .then((response) => {
                 // Success 
@@ -37,7 +38,7 @@ const ProductComp = (props) => {
                 }
             })
             .catch((error) => {
-                alert("Products list get Api Failed to fetch Data" + error)
+                alert("Products list get Api Failed to fetch Data" + error) // remove all alerts
             })
     }
 

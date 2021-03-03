@@ -15,6 +15,7 @@ function App() {
 
   const addToCartFunction = (newCartItem) => {
     const addNewCartItem = [...cartItem];
+    
     var needToPush = true;
     if (!newCartItem.count) newCartItem.count = 1;
     addNewCartItem.map(item => {
