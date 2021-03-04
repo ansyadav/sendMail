@@ -17,11 +17,12 @@
 
 
 import React from 'react';
+import { FOOTER_TEXT } from '../constant';
 const FooterComp = () => {
-    return(
+    return (
         <div className="footer">
             <div className="inner-footer">
-                Copyright &copy; 2011-2018 Sabka Bazar Grocery Supplies Pvt Ltd.
+                {FOOTER_TEXT}
             </div>
         </div>
     )
